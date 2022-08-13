@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container wrap">
+            <div class="container-title">
+                <h1>Quer sair comigo?</h1>
+            </div>   
+            <div class="container-button">
+                <div class = "heart" id="heart"></div>
+                <script type="text/javascript">
+                    document.getElementById("heart").style.display = "none";
+                </script>
+                <div class="botao">
+                    <button class="item" type="button" id="botao2" onclick="setHeart(this)">SIM</button>&nbsp;
+                </div>
+                <div class="botao">
+                    <button type="button" class="item" id="botao" onmouseover="move(this)">NÃO</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

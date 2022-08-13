@@ -1,0 +1,125 @@
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: linear-gradient(to top left, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+.container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .wrap {
+    /* Quebra a linha assim que um dos flex itens não puder mais ser compactado. */
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    flex: 1;
+    background: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    color: red;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  top: 50%;
+  }
+
+.container-button {
+    align-content: center;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    margin-top: 25%;
+    margin-left: 35%;
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.heart {
+  background: red;
+  position: relative;
+  height: 100px;
+  width:100px;
+  /* Animation */
+  transform: rotate(-45deg) scale(1);
+  animation: pulse 2s linear infinite;
+}
+
+#heart {
+  display: none;
+}
+
+
+.heart::after {
+  /* background:blue; */
+  background:inherit;
+  border-radius: 50%; /* To make circle */
+  content:'';
+  position:absolute;
+  /* top: -100px;*/
+  top: -50%; /* Inherit properties of parent */
+  /* left: -100px; */
+  left:0;
+  height: 100px;
+  width:100px;
+}
+.heart::before {
+/*  background:green; */
+  background:inherit; 
+  border-radius: 50%; /* To make circle */
+  content:'';
+  position:absolute;
+  top:0; 
+  right:-50%; /* Inherit properties of parent */
+  height: 100px;
+  width:100px;
+}
+
+@keyframes pulse{
+  0% {
+      transform: rotate(-45deg) scale(1);
+      opacity: 0;
+  }/*
+  10% {
+      transform: rotate(-45deg) scale(1.3);
+  }
+  20% {
+      transform: rotate(-45deg) scale(0.9);
+  }
+  30% {
+      transform: rotate(-45deg) scale(1.2);
+  }
+  40% {
+      transform: rotate(-45deg) scale(0.9);
+  }*/
+  50% {
+      transform: rotate(-45deg) scale(1.3);
+      opacity: 1;
+  }/*
+  60% {
+      transform: rotate(-45deg) scale(0.95);
+  }
+  70% {
+      transform: rotate(-45deg) scale(1);
+  } */
+  100% {
+      transform: rotate(-45deg) scale(1);
+      opacity: 1;
+  }
+}
